@@ -8,8 +8,9 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      searchString: "pasta",
+      searchString: "",
       recepies: [],
+      isLoading: true,
     };
   }
 
@@ -26,15 +27,15 @@ class App extends React.Component {
 
   async componentDidMount() {
     const results = await apiRequest();
-    this.setState({ recepies: results });
+    this.setState({ recepies: results, isLoading: false });
   }
 
   render() {
-    const { recepies } = this.state;
+    const { recepies, isLoading } = this.state;
     return (
       <>
         <div className="main-container">
-          <h1 class="heading container pt-4 pb-2">Explore! new Recepies</h1>
+          <h1 className="heading container pt-4 pb-2">Explore! new Recepies</h1>
 
           <form className="container" onSubmit={this.onSubmit}>
             <div className="form-group">
@@ -52,8 +53,8 @@ class App extends React.Component {
           </form>
 
           <div className="container">
-            <div id="parent" class="card-deck">
-              <Recepie recepies={recepies} />
+            <div id="parent" className="card-deck">
+              <Recepie recepies={recepies} isLoading={isLoading} />
             </div>
           </div>
         </div>

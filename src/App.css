@@ -1,32 +1,43 @@
-
-.main-container{
-   
-  background-image: url('./brooke-lark-08bOYnH_r_E-unsplash.jpg');
+.main-container {
+  background-image: url("./brooke-lark-08bOYnH_r_E-unsplash.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 90%;
+  background-size: 100% 100%;
   opacity: 0.8;
 }
 
-@media only screen and (max-width:600px){
-  .main-container{
-      background-image: none;
+@media only screen and (max-width: 600px) {
+  .main-container {
+    background-image: none;
   }
 }
-.heading{
+.heading {
   color: #f15025;
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
-.form-group{
+.form-group {
   width: 80%;
   display: flex;
   flex-direction: row;
 }
 
-.food-name{
+.food-name {
   color: #f15025;
 }
-#content{
+#content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+#parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.footer {
+  padding: 100px;
+  background-color: #fa3c08;
+  margin-top: 40px;
+  text-align: center;
+  color: white;
 }
